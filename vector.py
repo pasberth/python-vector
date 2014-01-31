@@ -19,7 +19,7 @@ class vector:
             elif len(o.v) > len(self.v): self.v += [0 for x in range(len(o.v)-len(self.v))]
             return sum([self.v[i] * o.v[i] for i in range(len(o.v))])
         else:
-            return map(lambda x: x*o, self.v)
+            return [ x*o for x in self.v ]
 
     def __str__(self):
         return str(self.v)
