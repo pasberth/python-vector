@@ -17,7 +17,7 @@ class vector:
         if isinstance(o,vector):
             if len(o.v) < len(self.v): o.v += [0 for x in range(len(self.v)-len(o.v))]
             elif len(o.v) > len(self.v): self.v += [0 for x in range(len(o.v)-len(self.v))]
-            return sum([self.v[i] * o.v[i] for i in range(len(o.v))])
+            return sum(self.v[i] * o.v[i] for i in range(len(o.v)))
         else:
             return [ x*o for x in self.v ]
 
@@ -25,4 +25,4 @@ class vector:
         return str(self.v)
 
     def __abs__(self):
-        return math.sqrt(sum([x**2 for x in self.v]))
+        return math.sqrt(sum(x**2 for x in self.v))
